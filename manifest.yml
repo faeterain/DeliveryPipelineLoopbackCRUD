@@ -1,0 +1,10 @@
+---
+applications:
+- name: LoopbackCRUD
+  memory: 512M
+  path: .
+  host: LoopbackCRUD
+  domain: mybluemix.net
+  command: node .
+  services:
+  - CloudantDB

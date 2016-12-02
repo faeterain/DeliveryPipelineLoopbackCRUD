@@ -1,0 +1,22 @@
+<section>
+    <h2>Users</h2>
+    <a ui-sref="sign-up" ui-sref-active="active">Add more</a>
+    <table class="table" border="1">
+        <thead>
+            <td>Name</td>
+            <td>Email</td>
+            <td></td>
+        </thead>
+        <tbody class="nav" ng-repeat="r in reviewers.slice().reverse()">
+            <tr>
+                <td>{{ r.name }}</td>
+                <td>{{ r.email }}</td>
+                <td>
+                    <button ui-sref="edit-member({ id: r.id })">Edit</button>
+                    <button a ui-sref="delete-member({ id: r.id })">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</section>
