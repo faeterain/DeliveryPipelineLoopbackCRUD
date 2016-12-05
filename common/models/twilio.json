@@ -1,0 +1,22 @@
+{
+    "name": "Twilio",
+    "base": "Model",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "mixins": {
+        "DisableAllMethods": {
+            "expose": [
+                "create",
+                "update",
+                "destroy"
+            ]
+        }
+    },
+    "properties": {},
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+}

@@ -48,5 +48,9 @@
     "CoffeeShop": {
         "dataSource": "cloudant_loopback",
         "public": true
+    },
+    "Twilio": {
+        "dataSource": "twilio",
+        "public": true
     }
 }

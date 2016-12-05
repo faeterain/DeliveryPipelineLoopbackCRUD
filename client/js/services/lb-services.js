@@ -35,6 +35,72 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
      */
     var module = angular.module("lbServices", ['ngResource']);
 
+
+
+
+    module.factory(
+        "Twilio", ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+            var R = Resource(
+                urlBase + "/Twilio/:id", { 'id': '@id' }, {
+
+                    /**
+                     * @ngdoc method
+                     * @name lbServices.Twilio#sendMessage
+                     * @methodOf lbServices.Twilio
+                     *
+                     * @description
+                     *
+                     * <em>
+                     * Send message to your phone.
+                     * </em>
+                     *
+                     * @param {Object=} parameters Request parameters.
+                     *
+                     *   This method does not accept any parameters.
+                     *   Supply an empty object or omit this argument altogether.
+                     * @param {Object} postData Request data.
+                     *
+                     *  - `access_token` – `{string}` - Do not supply this argument, it is automatically extracted from request headers.
+                     *
+                     *
+                     * @param {function(Object,Object)=} successCb
+                     *   Success callback with two arguments: `value`, `responseHeaders`.
+                     *
+                     * @param {function(Object)=} errorCb Error callback with one argument:
+                     *   `httpResponse`.
+                     *
+                     * @returns {Object} An empty reference that will be
+                     *   populated with the actual data once the response is returned
+                     *   from the server.
+                     *
+                     * Data properties:
+                     *
+                     *  - `data` – `{object=}` - 
+                     */
+                    "sendMessage": {
+                        url: urlBase + "/Twilios",
+                        method: "POST"
+                    },
+                }
+            );
+
+
+
+
+            /**
+             * @ngdoc property
+             * @name lbServices.Twilio#modelName
+             * @propertyOf lbServices.Twilio
+             * @description
+             * The name of the model represented by this $resource,
+             * i.e. `Twilio`.
+             */
+            R.modelName = "Twilio";
+
+
+            return R;
+        }]);
+
     /**
      * @ngdoc object
      * @name lbServices.User

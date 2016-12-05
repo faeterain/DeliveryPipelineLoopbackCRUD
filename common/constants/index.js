@@ -1,0 +1,1 @@
+exports.Messages = require('./messages');

@@ -12,5 +12,11 @@
         "name": "cloudant_loopback",
         "modelIndex": "1",
         "connector": "cloudant"
+    },
+    "twilio": {
+        "name": "twilio",
+        "connector": "loopback-connector-twilio",
+        "accountSid": "ACd00d74b40d73583559d808117f911879",
+        "authToken": "a82a4f7d7a18606f8b3e08fcf3eda041"
     }
 }
