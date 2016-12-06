@@ -26,11 +26,20 @@ angular
         function($scope, AuthService, $state) {
             $scope.action = "Sign up";
             $scope.user = {};
+            $scope.exist = false;
             $scope.register = function() {
-                AuthService.register($scope.user.name, $scope.user.email, $scope.user.password)
-                    .then(function() {
-                        $state.transitionTo('sign-up-success');
-                    });
+                AuthService.exist($scope.user.email).then(function(res) {
+                    if (res.count == 0) {
+                        AuthService.register($scope.user.name, $scope.user.email, $scope.user.password)
+                            .then(function() {
+                                $state.transitionTo('sign-up-success');
+                            });
+                        $scope.exist = false;
+                    } else {
+                        $scope.exist = true;
+                    }
+
+                }, function(err) {});
             };
         }
     ]);

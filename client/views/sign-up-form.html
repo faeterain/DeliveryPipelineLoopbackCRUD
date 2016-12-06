@@ -3,6 +3,7 @@
         <fieldset>
             <legend>{{ action }} member form</legend>
 
+            <p class="hint" ng-show="exist">Email is exist</p>
             <div class="form-group">
                 <label>Name</label>
                 <input name="name" type="text" ng-model="user.name" required>
@@ -10,7 +11,7 @@
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input name="email" type="email" ng-model="user.email" required>
+                <input name="email" type="email" ng-model="user.email" ng-disabled="{{action=='Edit'?'true':''}}" required>
                 <span ng-if="form.email.$error.required">
                     <span ng-show="form.email.$touched && form.email.$invalid">Email is required.</span>
                 </span>

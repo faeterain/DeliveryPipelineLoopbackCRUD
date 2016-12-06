@@ -51,10 +51,15 @@ angular
                     };
                 });
         }
+
+        function checkEmail(email) {
+            return User.count({ where: { "email": email } }).$promise;
+        }
         return {
             login: login,
             logout: logout,
             register: register,
-            refresh: refresh
+            refresh: refresh,
+            exist: checkEmail
         };
     }]);
